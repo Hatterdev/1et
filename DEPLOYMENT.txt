@@ -1,0 +1,94 @@
+# GIC Staking DApp Deployment Guide
+
+## Prerequisites
+
+1. Node.js 18+ installed
+2. Git installed
+3. A Netlify account
+4. MetaMask wallet installed
+
+## Local Development Setup
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repository-url>
+   cd gic-staking-dapp
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create environment variables:
+   Create a `.env.local` file in the root directory with:
+   ```
+   NEXT_PUBLIC_CONTRACT_ADDRESS=your_contract_address
+   NEXT_PUBLIC_NETWORK_ID=1 # 1 for mainnet, 5 for goerli
+   ```
+
+4. Run development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Run tests:
+   ```bash
+   npm test
+   ```
+
+## Production Deployment Steps
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. Deploy to Netlify:
+   - Connect your GitHub repository to Netlify
+   - Set build command: `npm run build`
+   - Set publish directory: `out`
+   - Add environment variables in Netlify dashboard
+
+3. Configure environment variables in Netlify:
+   - Go to Site settings > Build & deploy > Environment
+   - Add the same variables as in `.env.local`
+
+4. Enable HTTPS and custom domain (optional):
+   - Configure your custom domain in Netlify
+   - Netlify automatically provides SSL certificates
+
+## Post-Deployment Checklist
+
+1. Verify smart contract connection
+2. Test wallet connection
+3. Test staking functionality
+4. Verify transaction monitoring
+5. Check error handling
+6. Test on different networks
+
+## Security Considerations
+
+1. Contract address verification
+2. Network validation
+3. Transaction signing security
+4. Error handling for failed transactions
+
+## Monitoring and Maintenance
+
+1. Set up error monitoring (e.g., Sentry)
+2. Monitor transaction success rates
+3. Keep dependencies updated
+4. Regular security audits
+
+## Support
+
+For technical support or questions, please contact:
+[Your Support Email/Contact]
+
+## Troubleshooting
+
+Common issues and solutions:
+1. MetaMask connection issues: Refresh page and reconnect
+2. Network mismatch: Switch to correct network in MetaMask
+3. Transaction failures: Check gas prices and network congestion
